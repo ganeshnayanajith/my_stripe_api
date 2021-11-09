@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Stripe = require('stripe');
-const stripe = Stripe('sk_test_51IAtT6AdjKP6VXbYSU8bT4LpQyrKkTlddovsk3iwkpGX8VS8t3ymqzeBAyafKhgDyuW13Ynm50sYGzlepZYjNy3X009TsYVAeJ');
-const stripeCustomerId = 'cus_IqB42RHeVD1qnL';
+const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+const stripeCustomerId = process.env.STRIPE_CUSTOMER_ID;
 
 router.post('/', async (req, res) => {
   try {
